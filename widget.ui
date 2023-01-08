@@ -13,6 +13,25 @@
   <property name="windowTitle">
    <string>Form</string>
   </property>
+  <layout class="QHBoxLayout" name="horizontalLayout">
+   <item>
+    <widget class="QTabWidget" name="tabFeature">
+     <property name="currentIndex">
+      <number>0</number>
+     </property>
+     <widget class="QWidget" name="tab_serial">
+      <attribute name="title">
+       <string>Serial</string>
+      </attribute>
+     </widget>
+     <widget class="QWidget" name="tab_tcp_udp">
+      <attribute name="title">
+       <string>TCP/UDP</string>
+      </attribute>
+     </widget>
+    </widget>
+   </item>
+  </layout>
  </widget>
  <resources/>
  <connections/>
