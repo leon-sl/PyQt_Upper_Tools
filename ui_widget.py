@@ -33,7 +33,7 @@ class Ui_widget(object):
         self.tab_serial.setObjectName(u"tab_serial")
         self.push_button_open_serial = QPushButton(self.tab_serial)
         self.push_button_open_serial.setObjectName(u"push_button_open_serial")
-        self.push_button_open_serial.setGeometry(QRect(20, 20, 121, 31))
+        self.push_button_open_serial.setGeometry(QRect(100, 30, 81, 21))
         self.group_box_setting = QGroupBox(self.tab_serial)
         self.group_box_setting.setObjectName(u"group_box_setting")
         self.group_box_setting.setGeometry(QRect(20, 70, 181, 221))
@@ -49,7 +49,6 @@ class Ui_widget(object):
         self.label_serial_index.setObjectName(u"label_serial_index")
         self.label_serial_index.setGeometry(QRect(10, 60, 61, 21))
         self.combo_box_serial_index = QComboBox(self.group_box_setting)
-        self.combo_box_serial_index.addItem("")
         self.combo_box_serial_index.setObjectName(u"combo_box_serial_index")
         self.combo_box_serial_index.setGeometry(QRect(70, 60, 91, 22))
         self.label_baudrate = QLabel(self.group_box_setting)
@@ -143,6 +142,9 @@ class Ui_widget(object):
         self.line_edit_rx_count = QLineEdit(self.group_box_tx_rx_count)
         self.line_edit_rx_count.setObjectName(u"line_edit_rx_count")
         self.line_edit_rx_count.setGeometry(QRect(30, 50, 61, 20))
+        self.push_button_scan_serial = QPushButton(self.tab_serial)
+        self.push_button_scan_serial.setObjectName(u"push_button_scan_serial")
+        self.push_button_scan_serial.setGeometry(QRect(20, 30, 71, 21))
         self.tabFeature.addTab(self.tab_serial, "")
         self.tab_tcp_udp = QWidget()
         self.tab_tcp_udp.setObjectName(u"tab_tcp_udp")
@@ -168,8 +170,6 @@ class Ui_widget(object):
         self.combo_box_format.setItemText(1, QCoreApplication.translate("widget", u"Format", None))
 
         self.label_serial_index.setText(QCoreApplication.translate("widget", u"\u7aef\u53e3\u53f7\uff1a", None))
-        self.combo_box_serial_index.setItemText(0, "")
-
         self.label_baudrate.setText(QCoreApplication.translate("widget", u"\u6ce2\u7279\u7387\uff1a", None))
         self.label_data_bit.setText(QCoreApplication.translate("widget", u"\u6570\u636e\u4f4d\uff1a", None))
         self.label_parity_bit.setText(QCoreApplication.translate("widget", u"\u6821\u9a8c\u4f4d\uff1a", None))
@@ -201,6 +201,7 @@ class Ui_widget(object):
         self.group_box_tx_rx_count.setTitle(QCoreApplication.translate("widget", u"\u6536\u53d1\u8ba1\u6570", None))
         self.label_tx_count.setText(QCoreApplication.translate("widget", u"TX", None))
         self.label_rx_count.setText(QCoreApplication.translate("widget", u"RX", None))
+        self.push_button_scan_serial.setText(QCoreApplication.translate("widget", u"\u626b\u63cf\u4e32\u53e3", None))
         self.tabFeature.setTabText(self.tabFeature.indexOf(self.tab_serial), QCoreApplication.translate("widget", u"Serial", None))
         self.tabFeature.setTabText(self.tabFeature.indexOf(self.tab_tcp_udp), QCoreApplication.translate("widget", u"TCP/UDP", None))
     # retranslateUi
