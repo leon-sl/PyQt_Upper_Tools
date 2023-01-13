@@ -1,6 +1,6 @@
-from PySide6.QtCore import QIODeviceBase, Slot
+from PySide6.QtCore import QIODeviceBase, Slot, Signal
 from PySide6.QtSerialPort import QSerialPort, QSerialPortInfo 
-from PySide6.QtCore import QTimer
+from PySide6.QtCore import QTimer, QByteArray
 # from ui_widget import Ui_widget
 
 SCAN_COM_TIMER_MS = 2000
@@ -35,6 +35,7 @@ class SerialPort():
 
         self.ui.push_button_scan_serial.clicked.connect(self.scan_serial_port)
         self.ui.push_button_open_serial.clicked.connect(self.open_close_serial_port)
+        self.ui.pushButton_start_send.clicked.connect(self.write_data)
         self.serial.readyRead.connect(self.read_data)
         # self.ui.combo_box_serial_index.textActivated.connect(self.widget_test)
 
@@ -113,7 +114,15 @@ class SerialPort():
     @Slot()
     def read_data(self):
         data = self.serial.readAll()
-        print(data)
+        self.ui.text_browser_rx_space.append(data.data().decode("utf8"))
+
+    @Slot(bytearray)
+    def write_data(self):
+        text = self.ui.text_edit_tx_space.toPlainText()
+        print(text)
+        # data = text.encode('utf-8')
+        self.serial.write(QByteArray(text))
+        # print("write_data" + data)
 
     @Slot()
     def widget_test(self):

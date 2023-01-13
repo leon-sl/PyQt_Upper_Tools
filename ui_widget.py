@@ -17,7 +17,8 @@ from PySide6.QtGui import (QBrush, QColor, QConicalGradient, QCursor,
     QPalette, QPixmap, QRadialGradient, QTransform)
 from PySide6.QtWidgets import (QApplication, QCheckBox, QComboBox, QGroupBox,
     QHBoxLayout, QLabel, QLineEdit, QPushButton,
-    QSizePolicy, QTabWidget, QTextBrowser, QWidget)
+    QSizePolicy, QTabWidget, QTextBrowser, QTextEdit,
+    QWidget)
 
 class Ui_widget(object):
     def setupUi(self, widget):
@@ -92,9 +93,6 @@ class Ui_widget(object):
         self.label_tx_space = QLabel(self.tab_serial)
         self.label_tx_space.setObjectName(u"label_tx_space")
         self.label_tx_space.setGeometry(QRect(210, 260, 54, 16))
-        self.text_browser_tx_space = QTextBrowser(self.tab_serial)
-        self.text_browser_tx_space.setObjectName(u"text_browser_tx_space")
-        self.text_browser_tx_space.setGeometry(QRect(210, 280, 391, 61))
         self.pushButton_start_send = QPushButton(self.tab_serial)
         self.pushButton_start_send.setObjectName(u"pushButton_start_send")
         self.pushButton_start_send.setGeometry(QRect(530, 350, 75, 24))
@@ -153,6 +151,10 @@ class Ui_widget(object):
         self.push_button_scan_serial = QPushButton(self.tab_serial)
         self.push_button_scan_serial.setObjectName(u"push_button_scan_serial")
         self.push_button_scan_serial.setGeometry(QRect(20, 30, 71, 21))
+        self.text_edit_tx_space = QTextEdit(self.tab_serial)
+        self.text_edit_tx_space.setObjectName(u"text_edit_tx_space")
+        self.text_edit_tx_space.setGeometry(QRect(210, 280, 391, 61))
+        self.text_edit_tx_space.viewport().setProperty("cursor", QCursor(Qt.IBeamCursor))
         self.tabFeature.addTab(self.tab_serial, "")
         self.tab_tcp_udp = QWidget()
         self.tab_tcp_udp.setObjectName(u"tab_tcp_udp")
@@ -196,14 +198,6 @@ class Ui_widget(object):
 
         self.label_rx_space.setText(QCoreApplication.translate("widget", u"\u63a5\u6536\u533a\uff1a", None))
         self.label_tx_space.setText(QCoreApplication.translate("widget", u"\u53d1\u9001\u533a\uff1a", None))
-        self.text_browser_tx_space.setHtml(QCoreApplication.translate("widget", u"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
-"<html><head><meta name=\"qrichtext\" content=\"1\" /><meta charset=\"utf-8\" /><style type=\"text/css\">\n"
-"p, li { white-space: pre-wrap; }\n"
-"hr { height: 1px; border-width: 0; }\n"
-"li.unchecked::marker { content: \"\\2610\"; }\n"
-"li.checked::marker { content: \"\\2612\"; }\n"
-"</style></head><body style=\" font-family:'Microsoft YaHei UI'; font-size:9pt; font-weight:400; font-style:normal;\">\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">12345</p></body></html>", None))
         self.pushButton_start_send.setText(QCoreApplication.translate("widget", u"\u5f00\u59cb\u53d1\u9001", None))
         self.check_box_tx_hex_2.setText(QCoreApplication.translate("widget", u"Hex", None))
         self.check_box_tx_str.setText(QCoreApplication.translate("widget", u"\u5b57\u7b26\u4e32", None))
@@ -222,6 +216,14 @@ class Ui_widget(object):
         self.label_tx_count.setText(QCoreApplication.translate("widget", u"TX", None))
         self.label_rx_count.setText(QCoreApplication.translate("widget", u"RX", None))
         self.push_button_scan_serial.setText(QCoreApplication.translate("widget", u"\u626b\u63cf\u4e32\u53e3", None))
+        self.text_edit_tx_space.setHtml(QCoreApplication.translate("widget", u"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><meta charset=\"utf-8\" /><style type=\"text/css\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"hr { height: 1px; border-width: 0; }\n"
+"li.unchecked::marker { content: \"\\2610\"; }\n"
+"li.checked::marker { content: \"\\2612\"; }\n"
+"</style></head><body style=\" font-family:'Microsoft YaHei UI'; font-size:9pt; font-weight:400; font-style:normal;\">\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">12345</p></body></html>", None))
         self.tabFeature.setTabText(self.tabFeature.indexOf(self.tab_serial), QCoreApplication.translate("widget", u"Serial", None))
         self.tabFeature.setTabText(self.tabFeature.indexOf(self.tab_tcp_udp), QCoreApplication.translate("widget", u"TCP/UDP", None))
     # retranslateUi
